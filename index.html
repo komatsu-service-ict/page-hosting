@@ -1,24 +1,106 @@
-<!DOCTYPE html>
-<html lang="ja">
-  <head>
-    <meta charset="UTF-8">
-      <title>GitHub Static Page Hosting Test!</title>
-      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <link rel="stylesheet" href="css/style.css">
-  </head>
-  <body>
-    <h1>GitHub Static Page Hosting Test!</h1>
-		
-    <div class="wrapper">
-      <div class="row">
-        <canvas id="js__clock" width="150" height="150"></canvas>
-      </div>
-      <div class="row">
-        <p id="js__date"></p>
-        <p id="js__time"></p>
-      </div>
-    </div>
-    
-    <script src="js/common.js"></script>
-  </body>
+<!-- <model-viewer>を使って、3Dを、WEBサイトに埋め込む例 -->
+<html>
+
+<head>
+  <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+</head>
+<style>
+  model-viewer {
+    width: 100%;
+    height: 100%;
+  }
+
+  .hotspot {
+    display: block;
+    width: 10px;
+    height: 10px;
+    border-radius: 5px;
+    border: none;
+    background-color: blue;
+    box-sizing: border-box;
+    pointer-events: none;
+  }
+
+  .hotspot[slot="hotspot-hand"] {
+    --min-hotspot-opacity: 0;
+    background-color: red;
+  }
+
+  .annotation {
+    background-color: #888888;
+    position: absolute;
+    transform: translate(5px, 5px);
+    border-radius: 5px;
+    padding: 5px;
+  }
+
+  /* This keeps child nodes hidden while the element loads */
+  :not(:defined)>* {
+    display: none;
+  }
+</style>
+
+<body>
+  <model-viewer alt="cat" src="./excavator/scene.gltf" camera-controls interaction-prompt="none">
+  
+    <button class="hotspot" slot="hotspot-hand" data-position="1.3 1.6 0.8" data-normal="0.73 0.05 0.69">
+      <div class="annotation">P30</div>
+    </button>
+
+    <button class="hotspot" slot="hotspot-m41" data-position="1.0 3.3 0.7" data-normal="0.73 0.05 0.69">
+      <div class="annotation">M41</div>
+    </button>
+
+    <button class="hotspot" slot="hotspot-A20" data-position="0.0 3.3 2.7" data-normal="0.73 0.05 0.69">
+      <div class="annotation">A20</div>
+    </button>
+
+    <button class="hotspot" slot="hotspot-B15" data-position="0.0 3.4 3.9" data-normal="0.73 0.05 0.69">
+      <div class="annotation">B15</div>
+    </button>
+
+    <button class="hotspot" slot="hotspot-B16" data-position="0.0 0.5 3.9" data-normal="0.73 0.05 0.69">
+      <div class="annotation">B16</div>
+    </button>
+
+    <button class="hotspot" slot="hotspot-B21" data-position="-0.4 3.4 3.9" data-normal="-0.73 0.05 0.69">
+      <div class="annotation">B21</div>
+    </button>
+
+    <button class="hotspot" slot="hotspot-M56" data-position="-0.4 1.4 6.8" data-normal="-0.73 0.05 0.69">
+      <div class="annotation">M56</div>
+    </button>
+
+    <button class="hotspot" slot="hotspot-and" data-position="-1.0 1.8 0.8" data-normal="-0.73 0.05 0.69">
+      <div class="annotation">L01</div>
+    </button>
+
+    <button class="hotspot" slot="hotspot-t13" data-position="1.3 1.6 -1.0" data-normal="0.73 0.05 0.69">
+      <div class="annotation">T13</div>
+    </button>
+
+    <button class="hotspot" slot="hotspot-k11" data-position="1.3 2.2 -1.8" data-normal="0.73 0.05 0.69">
+      <div class="annotation">K11</div>
+    </button>
+
+    <button class="hotspot" slot="hotspot-s18" data-position="0.0 1.4 -1.0" data-normal="0 -1.2 0">
+      <div class="annotation">S18</div>
+    </button>
+
+    <button class="hotspot" slot="hotspot-e34" data-position="0.3 3.0 -3.5" data-normal="0 1.2 0">
+      <div class="annotation">E34</div>
+    </button>
+
+    <button class="hotspot" slot="hotspot-e25" data-position="-1.4 2.4 -3.5" data-normal="-0.73 0.05 0.69">
+      <div class="annotation">E25</div>
+    </button>
+
+    <button class="hotspot" slot="hotspot-a45" data-position="0.0 2.8 -4.6" data-normal="0.0 0.05 -1.0">
+      <div class="annotation">A45</div>
+    </button>
+
+
+  </model-viewer>
+</body>
+
 </html>
